@@ -444,6 +444,7 @@ class Content_Cards {
 	public static function build( $url, $args = array(), $fallback = false ) {
 		$default = array(
 			'url' 				=> $url,
+			'display' 		=> self::$options['display'],
 			'target'			=> self::$options['target'],
 			'word_limit'	=> self::$options['word_limit'],
 			'class'				=> '',
@@ -456,12 +457,14 @@ class Content_Cards {
 			$result = '';
 			if ( $fallback ) {
 				$target = $args['target'] ? ' target="_blank"' : '';
-				$domain = wp_parse_url( $url, PHP_URL_HOST );
 				$result = wpautop( "<a href=\"{$url}\"{$target}>{$domain}</a>" );
 			}
 			return $result;
 		}
 		$data['description'] = wpautop( isset( $data['description'] ) ? $data['description'] : '' );
+		if ($args['display'] != '') {
+		$data['title'] = $args['display'];
+	  }
 		$data['url'] = $url;
 		$data['target'] = $args['target'];
 		$data['css_class'] = $args['class'];

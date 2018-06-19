@@ -50,7 +50,7 @@
             },
             {
               type: 'textbox',
-              name: 'url',
+              name: 'display',
               label: contentcards.texts.link_title,
             },
             {

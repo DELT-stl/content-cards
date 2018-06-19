@@ -15,7 +15,6 @@
                             name: 'url',
                             label: contentcards.texts.link_label,
                         },
-                        // me
                         {
                           type: 'textbox',
                           name: 'display',
