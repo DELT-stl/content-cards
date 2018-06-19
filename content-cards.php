@@ -721,7 +721,7 @@ class Content_Cards {
 		if (defined('DOING_AJAX') && DOING_AJAX) {
 			return $query;
 		}
-		if ( !function_exists('get_current_screen') || (is_object(get_current_screen()) && 'upload' !== get_current_screen()->base) ) {
+		if ( !function_exists('get_current_screen') || 'upload' !== get_current_screen()->base ) {
 			return $query;
 		}
 		$q = $query->get( 'meta_query' );
@@ -959,6 +959,7 @@ class Content_Cards {
     		'texts' => array(
     			'main_label' 		=> __( 'Main', 'content-cards' ),
     			'advanced_label'	=> __( 'Advanced', 'content-cards' ),
+    			'link_title' 		=> __( 'Link Title', 'content-cards' ),
     			'link_label' 		=> __( 'Content Card URI', 'content-cards' ),
     			'target_label' 		=> __( 'Target', 'content-cards' ),
     			'target_text' 		=> __( 'Open Link in New Tab', 'content-cards' ),

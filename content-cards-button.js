@@ -1,4 +1,5 @@
 ( function() {
+  console.log('hello?');
     tinymce.PluginManager.add( 'contentcards', function( editor, url ) {
         editor.addButton( 'contentcards_shortcode', {
             image: contentcards.icon,
@@ -13,6 +14,12 @@
                             type: 'textbox',
                             name: 'url',
                             label: contentcards.texts.link_label,
+                        },
+                        // me
+                        {
+                          type: 'textbox',
+                          name: 'display',
+                          label: contentcards.texts.link_title,
                         },
                         {
                             type: 'checkbox',
@@ -38,7 +45,7 @@
                     }],
                     onsubmit: function( e ) {
                         var result = win.toJSON();
-                        var atts = ''; 
+                        var atts = '';
                         for ( var key in result ) {
                             if ( !result[key] ) {
                                 continue;
