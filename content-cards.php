@@ -967,6 +967,7 @@ class Content_Cards {
     		'icon' => plugins_url( 'content-cards-button.png', __FILE__ ),
     		'texts' => array(
     			'main_label' 		=> __( 'Main', 'content-cards' ),
+    			'custom_label' 		=> __( 'Custom', 'content-cards' ),
     			'advanced_label'	=> __( 'Advanced', 'content-cards' ),
     			'c_title' 		=> __( 'Custom Title', 'content-cards' ),
     			'c_description' 		=> __( 'Custom Description', 'content-cards' ),
