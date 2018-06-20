@@ -15,7 +15,7 @@
                   name: 'url',
                   label: contentcards.texts.link_label,
                 },
-                                {
+                {
                   type: 'checkbox',
                   name: 'target',
                   label: contentcards.texts.target_label,
@@ -24,11 +24,16 @@
                 }
               ],
             },
-              // custom
+            // custom
             {
               type: 'form',
               title: contentcards.texts.custom_label,
               items: [{
+                  type: 'textbox',
+                  name: 'custom_image',
+                  label: contentcards.texts.c_image,
+                },
+                {
                   type: 'textbox',
                   name: 'custom_title',
                   label: contentcards.texts.c_title,

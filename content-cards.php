@@ -969,8 +969,9 @@ class Content_Cards {
     			'main_label' 		=> __( 'Main', 'content-cards' ),
     			'custom_label' 		=> __( 'Custom', 'content-cards' ),
     			'advanced_label'	=> __( 'Advanced', 'content-cards' ),
-    			'c_title' 		=> __( 'Custom Title', 'content-cards' ),
-    			'c_description' 		=> __( 'Custom Description', 'content-cards' ),
+    			'c_image' 		=> __( 'Image', 'content-cards' ),
+    			'c_title' 		=> __( 'Title', 'content-cards' ),
+    			'c_description' 		=> __( 'Description', 'content-cards' ),
     			'link_label' 		=> __( 'Content Card URI', 'content-cards' ),
     			'target_label' 		=> __( 'Target', 'content-cards' ),
     			'target_text' 		=> __( 'Open Link in New Tab', 'content-cards' ),
@@ -1053,6 +1054,14 @@ function the_cc_css_classes( $classes = array( 'content_cards_card' ) ) {
  * @param $sanitize
  */
 function get_cc_image( $size = 'thumbnail', $sanitize = false ) {
+	// me
+// $default = array(
+// 			'custom_image' => Content_Cards::$options['custom_image'],
+			// 'word_limit'	=> self::$options['word_limit'],
+			// 'class'				=> '',
+			// 'skin'				=> self::$options['skin'],
+		// );
+		// me
 	if ( isset(Content_Cards::$temp_data['image_id']) && Content_Cards::$temp_data['image_id'] ) {
 		$result = wp_get_attachment_image_src( Content_Cards::$temp_data['image_id'], $size );
 		$result = $result[0];
@@ -1061,9 +1070,10 @@ function get_cc_image( $size = 'thumbnail', $sanitize = false ) {
 		}
 		return $result;
 	} else if ( isset(Content_Cards::$temp_data['image']) && Content_Cards::$temp_data['image'] ) {
-		// return get_cc_data( 'image', $sanitize );
+		return get_cc_data( 'image', $sanitize );
 		// custom image
-		return 'http://127.0.0.1:8080/wordpress/wp-content/uploads/2018/06/s446351785290861605_p15_i1_w2048.jpeg';
+		// return 'http://127.0.0.1:8080/wordpress/wp-content/uploads/2018/06/s446351785290861605_p15_i1_w2048.jpeg';
+		// return Content_Cards::$options['custom_image'];
 	} else {
 		return false;
 	}
