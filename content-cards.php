@@ -445,6 +445,7 @@ class Content_Cards {
 		$default = array(
 			'url' 				=> $url,
 			'custom_title' 		=> self::$options['custom_title'],
+			'custom_description' 		=> self::$options['custom_description'],
 			'target'			=> self::$options['target'],
 			'word_limit'	=> self::$options['word_limit'],
 			'class'				=> '',
@@ -461,7 +462,12 @@ class Content_Cards {
 			}
 			return $result;
 		}
+		if ($args['custom_description'] != '') {
+			$data['description'] = $args['custom_description'];
+		}
+		else {
 		$data['description'] = wpautop( isset( $data['description'] ) ? $data['description'] : '' );
+	  }
 		if ($args['custom_title'] != '') {
 		$data['title'] = $args['custom_title'];
 	  }
@@ -963,7 +969,7 @@ class Content_Cards {
     			'main_label' 		=> __( 'Main', 'content-cards' ),
     			'advanced_label'	=> __( 'Advanced', 'content-cards' ),
     			'c_title' 		=> __( 'Custom Title', 'content-cards' ),
-    			// 'c_description' 		=> __( 'Custom Description', 'content-cards' ),
+    			'c_description' 		=> __( 'Custom Description', 'content-cards' ),
     			'link_label' 		=> __( 'Content Card URI', 'content-cards' ),
     			'target_label' 		=> __( 'Target', 'content-cards' ),
     			'target_text' 		=> __( 'Open Link in New Tab', 'content-cards' ),
@@ -1054,7 +1060,9 @@ function get_cc_image( $size = 'thumbnail', $sanitize = false ) {
 		}
 		return $result;
 	} else if ( isset(Content_Cards::$temp_data['image']) && Content_Cards::$temp_data['image'] ) {
-		return get_cc_data( 'image', $sanitize );
+		// return get_cc_data( 'image', $sanitize );
+		// custom image
+		return 'http://127.0.0.1:8080/wordpress/wp-content/uploads/2018/06/s446351785290861605_p15_i1_w2048.jpeg';
 	} else {
 		return false;
 	}

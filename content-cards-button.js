@@ -20,10 +20,13 @@
                           name: 'custom_title',
                           label: contentcards.texts.c_title,
                         },
-                        //   type: 'textbox',
-                        //   name: 'custom_description',
-                        //   label: contentcards.texts.c_description,
-                        // },
+                        {
+                          type: 'textbox',
+                          multiline: 'true',
+                          name: 'custom_description',
+                          label: contentcards.texts.c_description,
+                          file_browser_callback: 'https://www.tinymce.com/docs-3x/howto/TinyMCE3x@How-to_implement_a_custom_file_browser/',
+                        },
                         {
                             type: 'checkbox',
                             name: 'target',
