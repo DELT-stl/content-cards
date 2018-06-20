@@ -444,7 +444,7 @@ class Content_Cards {
 	public static function build( $url, $args = array(), $fallback = false ) {
 		$default = array(
 			'url' 				=> $url,
-			'display' 		=> self::$options['display'],
+			'custom_title' 		=> self::$options['custom_title'],
 			'target'			=> self::$options['target'],
 			'word_limit'	=> self::$options['word_limit'],
 			'class'				=> '',
@@ -462,8 +462,8 @@ class Content_Cards {
 			return $result;
 		}
 		$data['description'] = wpautop( isset( $data['description'] ) ? $data['description'] : '' );
-		if ($args['display'] != '') {
-		$data['title'] = $args['display'];
+		if ($args['custom_title'] != '') {
+		$data['title'] = $args['custom_title'];
 	  }
 		$data['url'] = $url;
 		$data['target'] = $args['target'];
@@ -962,7 +962,8 @@ class Content_Cards {
     		'texts' => array(
     			'main_label' 		=> __( 'Main', 'content-cards' ),
     			'advanced_label'	=> __( 'Advanced', 'content-cards' ),
-    			'link_title' 		=> __( 'Link Title', 'content-cards' ),
+    			'c_title' 		=> __( 'Custom Title', 'content-cards' ),
+    			// 'c_description' 		=> __( 'Custom Description', 'content-cards' ),
     			'link_label' 		=> __( 'Content Card URI', 'content-cards' ),
     			'target_label' 		=> __( 'Target', 'content-cards' ),
     			'target_text' 		=> __( 'Open Link in New Tab', 'content-cards' ),

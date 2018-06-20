@@ -17,9 +17,13 @@
                         },
                         {
                           type: 'textbox',
-                          name: 'display',
-                          label: contentcards.texts.link_title,
+                          name: 'custom_title',
+                          label: contentcards.texts.c_title,
                         },
+                        //   type: 'textbox',
+                        //   name: 'custom_description',
+                        //   label: contentcards.texts.c_description,
+                        // },
                         {
                             type: 'checkbox',
                             name: 'target',
